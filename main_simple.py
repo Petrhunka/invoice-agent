@@ -67,8 +67,29 @@ def reload_data():
 def render_sidebar():
     """Render sidebar with navigation and quick stats"""
     with st.sidebar:
-        # Keboola logo
-        st.image("logo_blue.png", width=150)
+        # Keboola logo - try to load from different possible paths
+        try:
+            import os
+            logo_path = None
+            
+            # Try different possible paths
+            possible_paths = [
+                "logo_blue.png",
+                os.path.join(os.path.dirname(__file__), "logo_blue.png"),
+                os.path.join(os.getcwd(), "logo_blue.png")
+            ]
+            
+            for path in possible_paths:
+                if os.path.exists(path):
+                    logo_path = path
+                    break
+            
+            if logo_path:
+                st.image(logo_path, width=150)
+        except Exception:
+            # Logo is optional, continue without it
+            pass
+        
         st.markdown("### 🏢 AI Invoice Auditor")
         st.markdown("*by Keboola*")
         st.markdown("---")
