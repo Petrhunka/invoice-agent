@@ -1,0 +1,16 @@
+[theme]
+# Force light theme for Invoice Payment Manager
+primaryColor = "#1F8FFF"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F5F5"
+textColor = "#212121"
+font = "sans serif"
+base = "light"
+
+[server]
+headless = true
+port = 8501
+
+[browser]
+gatherUsageStats = false
+

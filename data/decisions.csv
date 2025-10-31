@@ -1,0 +1,65 @@
+request_id,decision_date,ai_decision,confidence_score,human_review,final_decision,processing_time_seconds,vendor_name,invoice_amount
+REQ-901,2025-10-17 02:31:27,Approved,0.89,False,Approved,119.4,Precision Engineering,49945.66
+REQ-902,2025-09-25 16:52:27,Approved,0.9,False,Approved,43.5,NextGen Technologies,44043.26
+REQ-903,2025-09-07 16:17:27,Approved,0.85,True,Approved,179.0,Elite Manufacturing,53458.72
+REQ-904,2025-08-26 22:37:27,Approved,0.87,False,Approved,291.0,TechGlobal Solutions,7067.15
+REQ-905,2025-10-01 17:19:27,Approved,0.72,False,Approved,71.6,TechGlobal Solutions,38240.18
+REQ-906,2025-09-09 04:33:27,Approved,0.81,False,Approved,30.7,TechGlobal Solutions,6898.7
+REQ-907,2025-10-14 22:59:27,Approved,0.94,False,Approved,269.0,Precision Engineering,50190.9
+REQ-908,2025-09-19 06:44:27,Rejected,0.73,False,Rejected,257.8,Prime Logistics,40150.97
+REQ-909,2025-10-17 23:58:27,Approved,0.72,False,Approved,282.9,Strategic Services,15304.69
+REQ-910,2025-08-25 03:35:27,Approved,0.76,False,Approved,276.4,NextGen Technologies,34316.19
+REQ-911,2025-10-20 16:26:27,Approved,0.74,False,Approved,220.7,Strategic Services,46368.36
+REQ-912,2025-10-09 12:46:27,Approved,0.78,False,Approved,294.6,Prime Logistics,43829.79
+REQ-913,2025-10-09 20:31:27,Approved,0.82,False,Approved,36.4,Global Trade Partners,9799.39
+REQ-914,2025-08-28 05:05:27,Approved,0.82,False,Approved,123.3,Elite Manufacturing,10576.84
+REQ-915,2025-09-05 09:51:27,Approved,0.76,False,Approved,89.3,Prime Logistics,10420.15
+REQ-916,2025-10-11 09:33:27,Approved,0.73,False,Approved,61.4,Global Trade Partners,14342.04
+REQ-917,2025-10-15 04:24:27,Approved,0.74,True,Approved,93.9,Elite Manufacturing,17126.94
+REQ-918,2025-09-09 13:07:27,Approved,0.86,True,Approved,219.9,DataFlow Systems,8677.79
+REQ-919,2025-10-22 22:47:27,Rejected,0.59,False,Rejected,107.2,CloudVentures Inc,37018.7
+REQ-920,2025-09-07 06:32:27,Approved,0.77,False,Approved,231.6,Global Trade Partners,53190.65
+REQ-921,2025-09-14 08:14:27,Approved,0.8,False,Approved,49.0,Precision Engineering,45761.67
+REQ-922,2025-09-12 22:08:27,Approved,0.74,False,Approved,204.5,Strategic Services,42278.94
+REQ-923,2025-09-09 19:03:27,Approved,0.88,False,Approved,80.8,Precision Engineering,37628.44
+REQ-924,2025-09-02 05:57:27,Rejected,0.53,False,Rejected,154.8,NextGen Technologies,29301.33
+REQ-925,2025-09-24 07:16:27,Approved,0.76,False,Approved,247.2,NextGen Technologies,11967.24
+REQ-926,2025-10-17 09:16:27,Approved,0.94,False,Approved,255.8,Elite Manufacturing,21326.18
+REQ-927,2025-10-12 10:41:27,Approved,0.94,False,Approved,190.2,Acme Corp,16995.51
+REQ-928,2025-10-12 12:04:27,Approved,0.73,False,Approved,67.8,Strategic Services,12800.43
+REQ-929,2025-09-16 05:15:27,Approved,0.87,False,Approved,274.6,Global Trade Partners,14487.8
+REQ-930,2025-10-12 13:07:27,Approved,0.91,True,Approved,169.2,Prime Logistics,47080.06
+REQ-931,2025-10-04 05:12:27,Rejected,0.75,False,Rejected,184.1,Acme Corp,9783.76
+REQ-932,2025-09-29 03:32:27,Approved,0.85,False,Approved,176.5,Acme Corp,33093.4
+REQ-933,2025-09-09 23:29:27,Approved,0.82,False,Approved,59.1,Elite Manufacturing,8813.17
+REQ-934,2025-09-09 19:17:27,Approved,0.86,False,Approved,69.8,Acme Corp,26313.74
+REQ-935,2025-10-18 13:39:27,Approved,0.92,False,Approved,180.2,Acme Corp,9428.81
+REQ-936,2025-09-13 10:47:27,Approved,0.78,True,Approved,155.5,Precision Engineering,11141.71
+REQ-937,2025-10-18 14:03:27,Approved,0.73,True,Approved,87.1,Prime Logistics,15056.36
+REQ-938,2025-10-21 18:54:27,Approved,0.77,False,Approved,265.9,Strategic Services,8611.23
+REQ-939,2025-09-10 14:44:27,Rejected,0.53,False,Rejected,243.6,NextGen Technologies,35399.67
+REQ-940,2025-09-22 03:34:27,Approved,0.93,False,Approved,139.7,NextGen Technologies,40289.8
+REQ-941,2025-09-15 22:47:27,Rejected,0.58,False,Rejected,275.9,Global Trade Partners,36814.19
+REQ-942,2025-09-01 17:32:27,Approved,0.71,True,Approved,237.4,Elite Manufacturing,33929.02
+REQ-943,2025-10-19 07:54:27,Approved,0.73,False,Approved,97.9,Global Trade Partners,36456.5
+REQ-944,2025-09-01 05:35:27,Approved,0.76,False,Approved,33.0,TechGlobal Solutions,43162.56
+REQ-945,2025-09-28 19:52:27,Approved,0.7,True,Approved,49.5,Prime Logistics,31149.21
+REQ-946,2025-10-21 00:56:27,Approved,0.75,False,Approved,180.7,Global Trade Partners,37844.5
+REQ-947,2025-10-22 10:16:27,Approved,0.91,False,Approved,106.4,Acme Corp,21039.87
+REQ-948,2025-09-24 22:14:27,Approved,0.72,False,Approved,45.9,CloudVentures Inc,35629.63
+REQ-949,2025-08-30 04:41:27,Approved,0.71,False,Approved,38.7,Prime Logistics,27528.34
+REQ-950,2025-10-04 13:12:27,Approved,0.78,False,Approved,244.2,TechGlobal Solutions,22651.85
+REQ-1001,2025-10-24 22:08:29,Approved,0.85,True,Approved,0.0,Strategic Services,3300.13
+REQ-1002,2025-10-24 22:08:35,Approved,0.84,True,Approved,0.0,Acme Corp,4124.34
+REQ-1003,2025-10-24 22:08:41,Approved,0.73,True,Approved,0.0,Digital Dynamics,12105.69
+REQ-1004,2025-10-24 22:08:46,Approved,0.61,True,Approved,0.0,TechGlobal Solutions,31949.89
+REQ-1005,2025-10-24 22:19:32,Rejected,0.57,True,Approved,0.0,Global Trade Partners,31588.09
+REQ-1006,2025-10-24 22:19:35,Approved,0.73,True,Approved,0.0,Enterprise Solutions,13397.8
+REQ-1007,2025-10-24 22:23:27,Approved,0.61,True,Approved,0.0,Innovative Solutions,40476.44
+REQ-1008,2025-10-24 22:23:30,Rejected,0.53,True,Approved,0.0,Strategic Services,31857.04
+REQ-1009,2025-10-24 22:24:01,Escalate,0.57,True,Rejected,0.0,DataFlow Systems,50975.4
+REQ-1010,2025-10-24 22:24:06,Rejected,0.52,True,Rejected,0.0,Alpha Industries,47780.82
+REQ-1011,2025-10-24 22:24:38,Approved,0.85,True,Approved,0.0,Innovative Solutions,7617.21
+REQ-1012,2025-10-24 22:24:42,Rejected,0.56,True,Approved,0.0,Digital Dynamics,45885.62
+REQ-1013,2025-10-24 22:24:45,Approved,0.75,True,Approved,0.0,Global Trade Partners,13446.22
+REQ-1014,2025-10-24 22:24:48,Approved,0.65,True,Rejected,0.0,Innovative Solutions,24772.11

@@ -1,0 +1,32 @@
+# Logo Placeholder
+
+This file serves as a placeholder for the Keboola logo.
+
+## To add the logo:
+
+1. Place your `logo_blue.png` file in this directory (project root)
+   - Recommended size: 150-200px width
+   - Format: PNG with transparent background
+   - Color scheme: Keboola blue (#1F8FFF)
+
+2. Uncomment the logo code in `main_simple.py`:
+
+   **Sidebar logo (around line 46):**
+   ```python
+   st.image("logo_blue.png", width=150)
+   ```
+
+   **Header logo (around lines 98-100):**
+   ```python
+   with open("logo_blue.png", "rb") as f:
+       logo_data = base64.b64encode(f.read()).decode()
+   st.markdown(render_header_with_logo(logo_data), unsafe_allow_html=True)
+   ```
+
+3. The app will work perfectly fine without the logo - it's purely cosmetic.
+
+## Current State
+
+The application is fully functional without the logo. All placeholder comments are in place
+for easy integration when the logo file becomes available.
+

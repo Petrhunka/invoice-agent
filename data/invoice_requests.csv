@@ -1,0 +1,17 @@
+request_id,vendor_name,invoice_amount,original_due_date,requested_extension_days,reason,priority,vendor_reliability_score,payment_history_score,cash_flow_impact,submission_date
+REQ-1015,TechGlobal Solutions,50551.69,2025-10-30,14,End of fiscal year budget reconciliation needed,High,0.82,0.85,Low,2025-10-14
+REQ-1016,DataFlow Systems,59168.49,2025-12-09,14,Restructuring payment schedules to align with revenue cycles,Low,0.8,0.88,Medium,2025-10-15
+REQ-1017,TechGlobal Solutions,5696.37,2025-11-16,7,Seasonal revenue fluctuation impacting payment capacity,Medium,0.76,0.79,Low,2025-10-23
+REQ-1018,TechGlobal Solutions,13315.62,2025-10-30,14,Restructuring payment schedules to align with revenue cycles,Medium,0.82,0.85,Medium,2025-10-14
+REQ-1019,DataFlow Systems,31149.94,2025-11-07,7,Unexpected operational expenses this quarter,High,0.81,0.83,Medium,2025-10-23
+REQ-1020,Acme Corp,29564.27,2025-12-16,7,Restructuring payment schedules to align with revenue cycles,High,0.75,0.84,Medium,2025-10-19
+REQ-1021,DataFlow Systems,8317.57,2025-12-20,7,Temporary supply chain disruption affecting liquidity,High,0.95,0.91,High,2025-10-20
+REQ-1022,Prime Logistics,24627.17,2025-12-20,30,Recent equipment investment affecting short-term cash position,Low,0.74,0.75,Medium,2025-10-16
+REQ-1023,Prime Logistics,65634.16,2025-12-15,30,Cash flow constraints due to delayed client payments,High,0.77,0.93,Medium,2025-10-15
+REQ-1024,Precision Engineering,16143.31,2025-12-02,30,Temporary supply chain disruption affecting liquidity,Medium,0.91,0.78,High,2025-10-22
+REQ-1025,TechGlobal Solutions,37174.75,2025-12-20,14,Unexpected operational expenses this quarter,Medium,0.94,0.86,Medium,2025-10-23
+REQ-1026,Prime Logistics,53677.51,2025-11-28,21,Temporary supply chain disruption affecting liquidity,Low,0.75,0.89,Low,2025-10-17
+REQ-1027,Strategic Services,44599.91,2025-11-15,7,Seasonal revenue fluctuation impacting payment capacity,High,0.86,0.86,Low,2025-10-15
+REQ-1028,Global Trade Partners,17649.13,2025-11-17,7,Cash flow constraints due to delayed client payments,Low,0.79,0.78,High,2025-10-19
+REQ-1029,Strategic Services,44580.12,2025-12-07,7,Temporary supply chain disruption affecting liquidity,Low,0.73,0.77,Low,2025-10-15
+REQ-1030,CloudVentures Inc,27096.6,2025-12-10,21,Unexpected operational expenses this quarter,High,0.86,0.8,Medium,2025-10-23
