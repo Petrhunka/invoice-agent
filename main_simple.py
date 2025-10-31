@@ -1281,7 +1281,13 @@ def render_ai_governance():
     # Header
     st.markdown(render_header_with_logo(), unsafe_allow_html=True)
     st.markdown("## 🔍 AI Governance & Compliance")
-    st.markdown("*Monitoring AI system compliance with regulatory requirements*")
+    st.markdown("""
+    This page monitors how our AI-powered invoice review system follows important rules and regulations. 
+    We track three key areas: **Risk Management** (how we assess invoice risk), **Data Compliance** 
+    (protecting sensitive information and following GDPR/EU AI Act), and **Data Quality** (ensuring 
+    accurate and reliable information). Each rule shows whether we're compliant, has warnings, or needs 
+    immediate attention. This transparency ensures our AI decisions are trustworthy, fair, and legally compliant.
+    """)
     st.markdown("---")
     
     # Get compliance data
