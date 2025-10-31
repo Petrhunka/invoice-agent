@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import base64
 
-from config import KEBOOLA_COLORS, APP_TITLE, APP_SUBTITLE, RISK_THRESHOLDS, FEATURE_WEIGHTS
+from config import KEBOOLA_COLORS, APP_TITLE, APP_SUBTITLE, RISK_THRESHOLDS, FEATURE_WEIGHTS, AI_GOVERNANCE_RULES
 from data_manager import DataManager
 from ai_decision_engine import AIDecisionEngine
 from email_generator import format_original_email, generate_email_response
@@ -98,7 +98,7 @@ def render_sidebar():
         st.markdown("### 🧭 Navigation")
         page = st.radio(
             "Select Page",
-            ["🏠 Dashboard", "📋 Review Requests", "📊 Reports"],
+            ["🏠 Dashboard", "📋 Review Requests", "📊 Reports", "🔍 AI Governance"],
             label_visibility="collapsed"
         )
         
@@ -1169,6 +1169,251 @@ def render_reports():
             st.info("No audit log entries to display")
 
 
+def get_governance_compliance_data():
+    """Generate mock AI governance compliance data"""
+    return {
+        "C2": {
+            "status": "Compliant",
+            "last_checked": datetime.now() - timedelta(hours=2),
+            "findings": [
+                "Risk classification model properly implemented using weighted scoring system",
+                "All invoice amounts categorized correctly (Low: <$20k, Medium: $20k-$50k, High: >$50k)",
+                "Risk thresholds aligned with business requirements and regulatory guidelines",
+                "Six decision factors weighted appropriately (Amount: 25%, Extension: 20%, Vendor: 20%, Payment: 15%, Cash Flow: 15%, Priority: 5%)",
+                "Risk score calculation validated against 1,247 historical cases with 94% accuracy",
+                "Confidence scoring mechanism includes vendor reliability and payment history metrics"
+            ],
+            "metrics": {
+                "Model Accuracy": "94%",
+                "Coverage": "100%",
+                "Validation Cases": "1,247",
+                "Last Updated": "2 hours ago"
+            },
+            "technical_details": {
+                "Risk Model Type": "Weighted Scoring System",
+                "Decision Thresholds": "Auto-approve: >80% confidence, <40% risk | Auto-reject: <60% confidence, >70% risk",
+                "Features Used": "6 (Amount, Extension Days, Vendor Reliability, Payment History, Cash Flow, Priority)",
+                "Escalation Logic": "High amounts (>$50k) with moderate risk escalate to human review"
+            },
+            "compliance_evidence": [
+                "Model documentation completed and approved by compliance team",
+                "Threshold validation completed on 2024-10-15",
+                "Risk assessment methodology aligned with EU AI Act requirements",
+                "Regular bias testing conducted quarterly (last: 2024-09-30)"
+            ]
+        },
+        "C15": {
+            "status": "Warning",
+            "last_checked": datetime.now() - timedelta(hours=5),
+            "findings": [
+                "PII detection active and masking vendor email addresses and phone numbers",
+                "GDPR Article 22 compliance: Human oversight integrated for all automated decisions",
+                "Data minimization principle applied - only necessary fields collected",
+                "Right to explanation implemented through detailed AI reasoning display",
+                "⚠️ Warning: Manual review required for cross-border payments (GDPR Article 44-50)",
+                "Audit trail maintained for all decisions with timestamp and user information"
+            ],
+            "metrics": {
+                "PII Fields Masked": "3",
+                "GDPR Compliance Score": "87%",
+                "Human Review Rate": "100%",
+                "Last Updated": "5 hours ago"
+            },
+            "technical_details": {
+                "AI System Classification": "Limited Risk System (EU AI Act Article 52)",
+                "Transparency Level": "High - Full explainability provided",
+                "Human Oversight": "Mandatory human review for all final decisions",
+                "Data Retention": "7 years (aligned with financial regulations)"
+            },
+            "compliance_evidence": [
+                "GDPR Data Protection Impact Assessment completed (2024-08-01)",
+                "EU AI Act conformity assessment in progress",
+                "Human-in-the-loop workflow verified and documented",
+                "Transparency notices displayed to all users",
+                "Data Processing Agreement with vendors in place"
+            ],
+            "action_items": [
+                "Review cross-border payment policy documentation",
+                "Complete EU AI Act conformity assessment by 2025-01-15",
+                "Update data transfer impact assessment for non-EU vendors"
+            ]
+        },
+        "C22": {
+            "status": "Compliant",
+            "last_checked": datetime.now() - timedelta(minutes=30),
+            "findings": [
+                "Profiling rules executed successfully on all incoming requests",
+                "All data quality checks passed with 100% success rate",
+                "No anomalies detected in recent batch (last 100 requests)",
+                "Vendor reliability scores validated against external credit ratings",
+                "Payment history calculations verified with accounting system data",
+                "Extension period validation confirms no requests exceed 30-day maximum",
+                "Cash flow impact assessments properly categorized based on company liquidity position"
+            ],
+            "metrics": {
+                "Rules Executed": "12",
+                "Success Rate": "100%",
+                "Requests Profiled": "1,543",
+                "Last Updated": "30 minutes ago"
+            },
+            "technical_details": {
+                "Profiling Scope": "All incoming invoice extension requests",
+                "Validation Rules": "12 automated checks covering data completeness, consistency, and accuracy",
+                "Data Sources": "Internal ERP, External Credit Bureau, Payment Gateway",
+                "Update Frequency": "Real-time for new requests, daily batch for historical data"
+            },
+            "compliance_evidence": [
+                "Profiling rules documented and version-controlled in Git repository",
+                "Data lineage tracking implemented for all profiled fields",
+                "Automated testing suite with 98% code coverage",
+                "Performance monitoring shows <100ms average profiling time",
+                "Error handling and logging mechanisms validated",
+                "Data quality metrics published to business intelligence dashboard"
+            ]
+        }
+    }
+
+
+def render_ai_governance():
+    """Render the AI Governance page"""
+    load_custom_css()
+    
+    # Header
+    st.markdown(render_header_with_logo(), unsafe_allow_html=True)
+    st.markdown("## 🔍 AI Governance & Compliance")
+    st.markdown("*Monitoring AI system compliance with regulatory requirements*")
+    st.markdown("---")
+    
+    # Get compliance data
+    compliance_data = get_governance_compliance_data()
+    
+    # Overall compliance summary
+    st.markdown("### 📊 Overall Compliance Status")
+    
+    # Count statuses
+    compliant_count = sum(1 for rule in compliance_data.values() if rule['status'] == 'Compliant')
+    warning_count = sum(1 for rule in compliance_data.values() if rule['status'] == 'Warning')
+    non_compliant_count = sum(1 for rule in compliance_data.values() if rule['status'] == 'Non-Compliant')
+    total_rules = len(compliance_data)
+    
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown(
+            render_metric_card(
+                "Total Rules",
+                total_rules,
+                "Monitored",
+                "📋"
+            ),
+            unsafe_allow_html=True
+        )
+    
+    with col2:
+        st.markdown(
+            render_metric_card(
+                "Compliant",
+                compliant_count,
+                f"{(compliant_count/total_rules*100):.0f}% of rules",
+                "✅"
+            ),
+            unsafe_allow_html=True
+        )
+    
+    with col3:
+        st.markdown(
+            render_metric_card(
+                "Warnings",
+                warning_count,
+                "Needs attention",
+                "⚠️"
+            ),
+            unsafe_allow_html=True
+        )
+    
+    with col4:
+        st.markdown(
+            render_metric_card(
+                "Non-Compliant",
+                non_compliant_count,
+                "Requires action",
+                "❌"
+            ),
+            unsafe_allow_html=True
+        )
+    
+    st.markdown("---")
+    st.markdown("### 📜 Compliance Rules Details")
+    
+    # Render each governance rule card
+    for rule_id, rule_config in AI_GOVERNANCE_RULES.items():
+        rule_data = compliance_data[rule_id]
+        
+        # Determine status color
+        if rule_data['status'] == 'Compliant':
+            status_color = KEBOOLA_COLORS['success_green']
+            status_icon = "✅"
+        elif rule_data['status'] == 'Warning':
+            status_color = KEBOOLA_COLORS['warning_yellow']
+            status_icon = "⚠️"
+        else:
+            status_color = KEBOOLA_COLORS['danger_red']
+            status_icon = "❌"
+        
+        # Create expandable card
+        with st.expander(f"{status_icon} **{rule_id}: {rule_config['title']}** - {rule_data['status']}", expanded=(rule_data['status'] != 'Compliant')):
+            # Rule header info
+            col_info1, col_info2 = st.columns(2)
+            
+            with col_info1:
+                st.markdown(f"**Category:** {rule_config['category']}")
+                st.markdown(f"**Description:** {rule_config['description']}")
+            
+            with col_info2:
+                st.markdown(f"**Status:** <span style='color: {status_color}; font-weight: bold;'>{status_icon} {rule_data['status']}</span>", unsafe_allow_html=True)
+                st.markdown(f"**Last Checked:** {rule_data['last_checked'].strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            st.markdown("---")
+            
+            # Metrics
+            st.markdown("**📊 Key Metrics**")
+            metric_cols = st.columns(len(rule_data['metrics']))
+            for idx, (metric_name, metric_value) in enumerate(rule_data['metrics'].items()):
+                with metric_cols[idx]:
+                    st.metric(metric_name, metric_value)
+            
+            st.markdown("---")
+            
+            # Findings
+            st.markdown("**🔍 Key Findings**")
+            for finding in rule_data['findings']:
+                if finding.startswith("⚠️"):
+                    st.warning(finding)
+                else:
+                    st.success(f"✓ {finding}")
+            
+            # Technical details if present
+            if 'technical_details' in rule_data:
+                st.markdown("---")
+                st.markdown("**🔧 Technical Specifications**")
+                for detail_name, detail_value in rule_data['technical_details'].items():
+                    st.markdown(f"**{detail_name}:** {detail_value}")
+            
+            # Compliance evidence if present
+            if 'compliance_evidence' in rule_data:
+                st.markdown("---")
+                st.markdown("**📋 Compliance Evidence & Documentation**")
+                for evidence in rule_data['compliance_evidence']:
+                    st.markdown(f"• {evidence}")
+            
+            # Action items if present
+            if 'action_items' in rule_data and rule_data['action_items']:
+                st.markdown("---")
+                st.markdown("**⚡ Action Items**")
+                for action in rule_data['action_items']:
+                    st.info(f"• {action}")
+
+
 def main():
     """Main application entry point"""
     
@@ -1185,6 +1430,8 @@ def main():
         render_review_requests()
     elif page == "📊 Reports":
         render_reports()
+    elif page == "🔍 AI Governance":
+        render_ai_governance()
     
     # Footer
     st.markdown("---")

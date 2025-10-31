@@ -100,3 +100,22 @@ AUDIT_LOG_COLUMNS = [
     "timestamp", "action", "user", "request_id", "details", "ip_address"
 ]
 
+# AI Governance Rules
+AI_GOVERNANCE_RULES = {
+    "C2": {
+        "title": "AI Classification Risk Assignment",
+        "description": "Check and summary of AI risk classification",
+        "category": "Risk Management"
+    },
+    "C15": {
+        "title": "Responsible AI & EU AI Act",
+        "description": "Identify and mask sensitive data for compliance",
+        "category": "Compliance"
+    },
+    "C22": {
+        "title": "Basic Profiling Rules Run",
+        "description": "Profiling rules execution and validation",
+        "category": "Data Quality"
+    }
+}
+
