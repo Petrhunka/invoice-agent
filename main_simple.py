@@ -476,9 +476,9 @@ def render_business_explanation(request, ai_result):
     st.markdown("##### AI Recommendation")
     reasoning = ai_result.get('reasoning', '')
     if decision == 'Approved':
-        st.success(f"✅ **APPROVED**: {reasoning}")
+        st.success(f"✅ **TO APPROVE**: {reasoning}")
     elif decision == 'Rejected':
-        st.error(f"❌ **REJECTED**: {reasoning}")
+        st.error(f"❌ **TO REJECT**: {reasoning}")
     else:
         st.warning(f"⚡ **ESCALATE**: {reasoning}")
 
@@ -723,12 +723,12 @@ def render_review_requests():
         decision = ai_result['decision']
         if decision == 'Approved':
             st.markdown(
-                f"<h2 style='color: {KEBOOLA_COLORS['success_green']};'>✅ APPROVED</h2>",
+                f"<h2 style='color: {KEBOOLA_COLORS['success_green']};'>✅ TO APPROVE</h2>",
                 unsafe_allow_html=True
             )
         elif decision == 'Rejected':
             st.markdown(
-                f"<h2 style='color: {KEBOOLA_COLORS['danger_red']};'>❌ REJECTED</h2>",
+                f"<h2 style='color: {KEBOOLA_COLORS['danger_red']};'>❌ TO REJECT</h2>",
                 unsafe_allow_html=True
             )
         else:
